@@ -31,6 +31,10 @@ app.get("/repeat/blah/2", function(req, res) {
 	res.send("blah blah");
 });
 
+app.get("*", function(req, res) {
+	res.send("Sorry, page not found...What are you doing with your life?");
+});
+
 app.listen(3000, function() {
 	console.log("Server started successfully, listening app on port 3000");
 });
