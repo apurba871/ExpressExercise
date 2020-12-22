@@ -31,16 +31,11 @@ app.get("/speak/:animal", function(req, res) {
 app.get("/repeat/:word/:times", function(req, res) {
 	var word = req.params.word;
 	var times = Number(req.params.times);
-	var str;
-	if (times > 0) {
-		str = word;
-		for (var i = 1; i < times; ++i) {
-			str += " " + word;
-		}
-		res.send(str);
-	} else {
-		res.send();
+	var str = "";
+	for (var i = 0; i < times; ++i) {
+		str += word + " ";
 	}
+	res.send(str);
 });
 
 app.get("*", function(req, res) {
