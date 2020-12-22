@@ -19,6 +19,18 @@ app.get("/speak/dog", function(req, res) {
 	res.send("The dog says 'Woof Woof!'");
 });
 
+app.get("/repeat/hello/3", function(req, res) {
+	res.send("hello hello hello");
+});
+
+app.get("/repeat/hello/5", function(req, res) {
+	res.send("hello hello hello hello hello");
+});
+
+app.get("/repeat/blah/2", function(req, res) {
+	res.send("blah blah");
+});
+
 app.listen(3000, function() {
 	console.log("Server started successfully, listening app on port 3000");
 });
